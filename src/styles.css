@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+#toast-container {
+    width: 200px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+.toast-bootstrap > div {
+    opacity: 1;
+}
+
+.toast-success,
+.toast-error {
+    padding: 15px 25px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+

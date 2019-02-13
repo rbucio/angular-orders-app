@@ -1,0 +1,35 @@
+<div class="container order-list-container">
+    <div class="row order-list-table">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">PO-Number</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Freight Forwarding</th>
+                        <th scope="col">Ship By Date</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let currentOrder of orderList">
+                        <td scope="row">{{currentOrder.dateTime | date: 'shortDate'}}</td>
+                        <td>{{currentOrder.poNumber}}</td>
+                        <td>{{currentOrder.destination.destinationName}}</td>
+                        <td>{{currentOrder.freightForwarder.companyName}}</td>
+                        <td>{{currentOrder.shipByDate | date: 'shortDate'}}</td>
+                        <td>
+                            <button 
+                                type="button" 
+                                class="btn btn-danger" data-toggle="modal" data-target="#alertModal"
+                                (click)="setForDeletion(currentOrder._id)">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
